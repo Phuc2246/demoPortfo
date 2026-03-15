@@ -3,262 +3,146 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Professional Embedded Software Engineer - Automotive & Embedded Systems Specialist">
-    <meta name="keywords" content="Embedded Software, STM32, Qt, IoT, Automotive, Linux">
-    <title>Nguyen Hong Phuc - Embedded Software Engineer</title>
+    <meta name="description" content="Nguyen Hong Phuc - Fresher Embedded Software Engineer, specializing in STM32, Embedded Linux, Automotive Systems">
+    <title>Nguyen Hong Phuc | Embedded Engineer</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Scroll Progress Bar -->
-    <div class="scroll-progress"></div>
-    
-    <!-- Back to Top Button -->
-    <button class="back-to-top" id="backToTop" title="Back to Top">
-        <i class="fas fa-chevron-up"></i>
-    </button>
 
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="active">
-                <h1 class="logo">PH. Engineer</h1>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
+    <!-- Scroll Progress -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">
+                <span class="logo-bracket">&lt;</span>PH<span class="logo-bracket">/&gt;</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#education" class="nav-link">Education</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
+        <div class="hero-bg">
+            <div class="hero-grid"></div>
+        </div>
         <div class="hero-content">
-            <h2 class="hero-title">Nguyen Hong Phuc</h2>
-            <p class="hero-subtitle">Embedded Software Engineer</p>
-            <p class="hero-description">Specializing in Automotive Systems, Embedded Linux, and Real-time Applications</p>
-            <div class="hero-buttons">
-                <a href="#projects" class="btn btn-primary">View My Work</a>
-                <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+            <div class="hero-text">
+                <p class="hero-greeting">Hello, I'm</p>
+                <h1 class="hero-name">Nguyen Hong Phuc</h1>
+                <div class="hero-role">
+                    <span class="role-text" id="roleText"></span>
+                    <span class="cursor">|</span>
+                </div>
+                <p class="hero-desc">
+                    Final-year Electronics Engineering student passionate about embedded systems,
+                    automotive software, and low-level programming.
+                </p>
+                <div class="hero-actions">
+                    <a href="#projects" class="btn btn-primary">
+                        <i class="fas fa-code"></i> View Projects
+                    </a>
+                    <a href="#contact" class="btn btn-outline">
+                        <i class="fas fa-paper-plane"></i> Get in Touch
+                    </a>
+                </div>
+                <div class="hero-socials">
+                    <a href="https://github.com/NguyenHongPhuc0412-2004" target="_blank" class="social-link" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/ph%C3%BAc-nguy%E1%BB%85n-a78b2838b" target="_blank" class="social-link" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="mailto:phucnguyenhong412@gmail.com" class="social-link" aria-label="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="avatar-ring">
+                    <img src="anh/hinh.jpg" alt="Nguyen Hong Phuc" class="avatar">
+                </div>
+                <div class="avatar-badges">
+                    <div class="badge badge-1"><i class="fas fa-microchip"></i> STM32</div>
+                    <div class="badge badge-2"><i class="fab fa-linux"></i> Linux</div>
+                    <div class="badge badge-3"><i class="fas fa-car"></i> Automotive</div>
+                </div>
             </div>
         </div>
-        <!-- Tux Penguin -->
-        <div class="tux-container">
-            <div class="tux">
-                <div class="tux-head"></div>
-                <div class="tux-body"></div>
-                <div class="tux-belly"></div>
-                <div class="tux-feet"></div>
-                <div class="tux-feet feet-right"></div>
-                <div class="tux-wing"></div>
-                <div class="tux-wing wing-right"></div>
-            </div>
-        </div>
-        <div class="hero-background">
-            <div class="circle circle-1"></div>
-            <div class="circle circle-2"></div>
-            <div class="circle circle-3"></div>
-        </div>
+        <a href="#about" class="scroll-down">
+            <i class="fas fa-chevron-down"></i>
+        </a>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about">
+    <section id="about" class="section about">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <div class="intro-section">
-                        <h3 class="intro-title">Embedded Systems Engineer | Automotive Specialist</h3>
-                        <p class="intro-subtitle">4+ Years Designing Production-Grade Embedded Systems</p>
-                    </div>
-                    <p>I am a dedicated Embedded Software Engineer with 4+ years of professional experience developing embedded systems for automotive and IoT applications. I specialize in designing and implementing low-level drivers, communication protocols, real-time systems, and high-performance user interfaces that meet automotive industry standards.</p>
-                    <p><strong>Key Achievements:</strong></p>
-                    <ul class="achievements-list">
-                        <li>Designed and deployed automotive dashboard systems deployed on 50K+ vehicles in production</li>
-                        <li>Optimized embedded Linux boot time from 15s → 3s (80% improvement)</li>
-                        <li>Architected low-level drivers reducing memory footprint by 45%</li>
-                        <li>Mentored 3+ junior engineers on embedded systems best practices</li>
-                        <li>Led technical design reviews ensuring code quality and system reliability</li>
-                    </ul>
-                    <p><strong>Core Expertise:</strong> Embedded Linux | Real-Time Systems | Automotive Firmware | CAN Bus | Qt/QML HMI | STM32 Microcontrollers | Driver Development | IoT Systems</p>
-                    <div class="info-grid">
-                        <div class="info-item">
-                            <span class="label">Location:</span>
-                            <span>Thủ Đức, Ho Chi Minh, Vietnam</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="label">Email:</span>
-                            <span><a href="mailto:phucnguyenhong412@gmail.com">phucnguyenhong412@gmail.com</a></span>
-                        </div>
-                        <div class="info-item">
-                            <span class="label">Phone:</span>
-                            <span><a href="tel:+84918023232">+84 918 023 232</a></span>
-                        </div>
-                        <div class="info-item">
-                            <span class="label">Connect:</span>
-                            <span>
-                                <a href="https://github.com/Phuc2246" target="_blank" style="margin-right: 1rem;"><i class="fab fa-github"></i> GitHub</a>
-                                <a href="https://linkedin.com/in/phuc-nguyen" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-                <div class="about-image">
-                    <div class="certification-container">
-                        <div class="cert-item">
-                            <img src="anh/hinh.jpg" alt="Portfolio" class="toeic-image">
-                        </div>
-                        <div class="cert-item">
-                            <div class="image-placeholder">
-                                <i class="fas fa-microchip"></i>
+            <div class="section-header">
+                <span class="section-tag">About Me</span>
+                <h2 class="section-title">Who Am I?</h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-info">
+                    <p class="about-intro">
+                        I'm a <strong>final-year Electronics Engineering student</strong> at a university in Ho Chi Minh City,
+                        graduating in 2026. I have a strong passion for embedded systems and automotive software development.
+                    </p>
+                    <p>
+                        Through personal projects and coursework, I've built hands-on experience with
+                        microcontroller programming, embedded Linux, real-time systems, and HMI development
+                        using Qt/QML. I love working close to the hardware and writing efficient, reliable firmware.
+                    </p>
+
+                    <div class="about-highlights">
+                        <div class="highlight-item">
+                            <div class="highlight-icon"><i class="fas fa-graduation-cap"></i></div>
+                            <div>
+                                <strong>Electronics Engineering</strong>
+                                <span>2022 – 2026 | Ho Chi Minh City</span>
                             </div>
                         </div>
-                        <div class="cert-item toeic-cert">
-                            <img src="anh/toeic.jpg" alt="TOEIC Certificate" class="toeic-image">
+                        <div class="highlight-item">
+                            <div class="highlight-icon"><i class="fas fa-certificate"></i></div>
+                            <div>
+                                <strong>TOEIC 640</strong>
+                                <span>English Proficiency | Valid until 2027</span>
+                            </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
-            <div class="projects-grid">
-                <!-- Project 1 -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-icon">
-                            <i class="fas fa-car"></i>
-                        </div>
-                        <h3>Digital Instrument Cluster & VCU</h3>
-                    </div>
-                    <p class="project-description">
-                        <strong>📊 Real-time automotive dashboard deployed on 50K+ vehicles</strong><br>
-                        Multi-layer embedded Linux system with CAN Bus integration • Boot time optimized from 15s → 3s<br>
-                        <span class="project-impact">Impact: 80% faster startup, 32% memory reduction, 99.8% uptime in production</span>
-                    </p>
-                    
-                    <!-- Image Gallery -->
-                    <div class="project-gallery">
-                        <div class="gallery-title">Project Showcase</div>
-                        <div class="gallery-grid">
-                            <img src="anh/Screenshot from 2025-12-11 22-21-11.png" alt="Cluster Interface 1" class="gallery-img">
-                            <img src="anh/Screenshot from 2025-12-11 22-21-18.png" alt="Cluster Interface 2" class="gallery-img">
-                            <img src="anh/Screenshot from 2025-12-11 22-21-23.png" alt="Cluster Interface 3" class="gallery-img">
-                            <img src="anh/Screenshot from 2025-12-11 22-21-34.png" alt="Cluster Interface 4" class="gallery-img">
-                            <img src="anh/Screenshot from 2025-12-11 22-21-39.png" alt="Cluster Interface 5" class="gallery-img">
-                            <img src="anh/Screenshot from 2025-12-11 22-21-50.png" alt="Cluster Interface 6" class="gallery-img">
+                        <div class="highlight-item">
+                            <div class="highlight-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div>
+                                <strong>Location</strong>
+                                <span>Thủ Đức, Hồ Chí Minh, Vietnam</span>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Video Demo -->
-                    <div class="project-video">
-                        <div class="video-title">Live Demo</div>
-                        <video class="demo-video" controls>
-                            <source src="video/Cluster_automotive.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
-                    
-                    <div class="project-section">
-                        <h4>Key Responsibilities</h4>
-                        <ul class="project-list">
-                            <li>Engineered custom Embedded Linux distribution using Yocto Project for Raspberry Pi 4</li>
-                            <li>Optimized image for fast boot-up with integrated Qt runtime, SocketCAN, and systemd services</li>
-                            <li>Designed high-performance HMI using Qt/QML with dynamic gauges and real-time visualization</li>
-                            <li>Developed multi-threaded C++ communication backend using SocketCAN for VCU-ECU data exchange</li>
-                            <li>Programmed STM32F103 firmware with JSON-based I/O mapping for dynamic pin configuration</li>
-                        </ul>
-                    </div>
-
-                    <div class="project-section">
-                        <h4>Technologies</h4>
-                        <div class="tech-tags">
-                            <span class="tech-tag">Raspberry Pi 4</span>
-                            <span class="tech-tag">STM32</span>
-                            <span class="tech-tag">Qt/QML</span>
-                            <span class="tech-tag">C/C++</span>
-                            <span class="tech-tag">SocketCAN</span>
-                            <span class="tech-tag">JSON</span>
-                            <span class="tech-tag">CAN Bus</span>
-                            <span class="tech-tag">Embedded Linux</span>
-                            <span class="tech-tag">Yocto</span>
-                        </div>
-                    </div>
-
-                    <!-- GitHub Link -->
-                    <div class="project-footer">
-                        <a href="https://github.com/Phuc2246/Digital-Instrument-Cluster-Vehicle-Control-Unit-VCU-" target="_blank" class="github-btn">
-                            <i class="fab fa-github"></i> View on GitHub
+                    <div class="about-contacts">
+                        <a href="mailto:phucnguyenhong412@gmail.com" class="contact-chip">
+                            <i class="fas fa-envelope"></i> phucnguyenhong412@gmail.com
+                        </a>
+                        <a href="tel:+84918023232" class="contact-chip">
+                            <i class="fas fa-phone"></i> +84 918 023 232
                         </a>
                     </div>
                 </div>
 
-                <!-- Project 2 -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-icon">
-                            <i class="fas fa-gamepad"></i>
-                        </div>
-                        <h3>Dino Game Controller</h3>
-                    </div>
-                    <p class="project-description">
-                        <strong>⚡ Bare-metal firmware engineer demonstrating low-level systems expertise</strong><br>
-                        Direct register access, hardware interrupts, PWM control • Zero HAL library dependency<br>
-                        <span class="project-impact">Impact: 150KB firmware size optimized, response latency <5ms, 100% reliability in testing</span>
-                    </p>
-                    
-                    <!-- Video Demo -->
-                    <div class="project-video">
-                        <div class="video-title">Live Demo</div>
-                        <video class="demo-video" controls>
-                            <source src="video/emb_driver.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
-                    
-                    <div class="project-section">
-                        <h4>Key Responsibilities</h4>
-                        <ul class="project-list">
-                            <li>Architected low-level drivers using Bare-metal C with direct register access</li>
-                            <li>Implemented GPIO, USART, and Timer drivers independently without HAL libraries</li>
-                            <li>Developed Hardware ISR for input handling with robust software debouncing</li>
-                            <li>Established bidirectional UART communication protocol with PC-based Python engine</li>
-                            <li>Configured Advanced Timers and PWM for dynamic LED feedback effects</li>
-                        </ul>
-                    </div>
-
-                    <div class="project-section">
-                        <h4>Technologies</h4>
-                        <div class="tech-tags">
-                            <span class="tech-tag">STM32F407DISC</span>
-                            <span class="tech-tag">Embedded C</span>
-                            <span class="tech-tag">EXTI Interrupts</span>
-                            <span class="tech-tag">Timer/PWM</span>
-                            <span class="tech-tag">USART</span>
-                            <span class="tech-tag">Bare-metal</span>
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Pygame</span>
-                            <span class="tech-tag">VSCode</span>
-                        </div>
-                    </div>
-
-                    <!-- GitHub Link -->
-                    <div class="project-footer">
-                        <a href="https://github.com/Phuc2246/Embedded-Driver-Dino-game-project-with-STM32F407-DISC-and-OLED" target="_blank" class="github-btn">
-                            <i class="fab fa-github"></i> View on GitHub
-                        </a>
+                <div class="about-cert">
+                    <div class="cert-card">
+                        <div class="cert-badge-label">TOEIC Certificate</div>
+                        <img src="anh/toeic.jpg" alt="TOEIC Certificate" class="cert-img">
+                        <div class="cert-score">Score: 640 / 990</div>
                     </div>
                 </div>
             </div>
@@ -266,167 +150,330 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="skills">
+    <section id="skills" class="section skills">
         <div class="container">
-            <h2 class="section-title">Technical Skills</h2>
+            <div class="section-header">
+                <span class="section-tag">Technical Skills</span>
+                <h2 class="section-title">What I Work With</h2>
+            </div>
+
             <div class="skills-grid">
-                <div class="skill-category">
-                    <h3><i class="fas fa-microchip"></i> Microcontrollers</h3>
-                    <ul>
-                        <li>STM32 Family (F1, F4, H7)</li>
-                        <li>Raspberry Pi</li>
+                <div class="skill-card">
+                    <div class="skill-card-icon"><i class="fas fa-microchip"></i></div>
+                    <h3>Microcontrollers</h3>
+                    <ul class="skill-list">
+                        <li>STM32 (F1, F4, H7 series)</li>
+                        <li>ARM Cortex-M Architecture</li>
+                        <li>Raspberry Pi 4</li>
                         <li>Arduino</li>
-                        <li>ARM Cortex-M</li>
                     </ul>
                 </div>
 
-                <div class="skill-category">
-                    <h3><i class="fas fa-code"></i> Programming Languages</h3>
-                    <div class="language-icons">
-                        <div class="language-item">
-                            <img src="anh/c-c++.jpg" alt="C/C++" class="lang-icon">
-                            <span>C/C++</span>
+                <div class="skill-card">
+                    <div class="skill-card-icon"><i class="fas fa-code"></i></div>
+                    <h3>Programming</h3>
+                    <div class="lang-grid">
+                        <div class="lang-chip">
+                            <img src="anh/c-c++.jpg" alt="C/C++">
+                            <span>C / C++</span>
                         </div>
-                        <div class="language-item">
-                            <img src="anh/embedded-c.jpg" alt="C Embedded" class="lang-icon">
-                            <span>C Embedded</span>
+                        <div class="lang-chip">
+                            <img src="anh/embedded-c.jpg" alt="Embedded C">
+                            <span>Bare-metal C</span>
                         </div>
-                        <div class="language-item">
-                            <img src="anh/Python.png" alt="Python" class="lang-icon">
+                        <div class="lang-chip">
+                            <img src="anh/Python.png" alt="Python">
                             <span>Python</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="skill-category">
-                    <h3><i class="fas fa-layer-group"></i> Embedded OS & Frameworks</h3>
-                    <ul>
+                <div class="skill-card">
+                    <div class="skill-card-icon"><i class="fab fa-linux"></i></div>
+                    <h3>OS & Frameworks</h3>
+                    <ul class="skill-list">
                         <li>Embedded Linux</li>
                         <li>Yocto Project</li>
-                        <li>Qt/QML</li>
+                        <li>Qt / QML (HMI)</li>
                         <li>systemd</li>
-                        <li>Real-time Systems</li>
                     </ul>
                 </div>
 
-                <div class="skill-category">
-                    <h3><i class="fas fa-network-wired"></i> Communication Protocols</h3>
-                    <ul>
-                        <li>CAN Bus</li>
-                        <li>UART/Serial</li>
-                        <li>SPI/I2C</li>
-                        <li>SocketCAN</li>
+                <div class="skill-card">
+                    <div class="skill-card-icon"><i class="fas fa-network-wired"></i></div>
+                    <h3>Protocols</h3>
+                    <ul class="skill-list">
+                        <li>CAN Bus / SocketCAN</li>
+                        <li>UART / USART</li>
+                        <li>SPI / I2C</li>
+                        <li>GPIO / EXTI Interrupts</li>
                     </ul>
                 </div>
 
-                <div class="skill-category">
-                    <h3><i class="fas fa-tools"></i> Development Tools</h3>
-                    <ul>
-                        <li>VSCode</li>
+                <div class="skill-card">
+                    <div class="skill-card-icon"><i class="fas fa-tools"></i></div>
+                    <h3>Dev Tools</h3>
+                    <ul class="skill-list">
                         <li>STM32CubeIDE</li>
+                        <li>VS Code + OpenOCD</li>
                         <li>GDB Debugger</li>
-                        <li>Git Version Control</li>
+                        <li>Git</li>
                     </ul>
                 </div>
 
-                <div class="skill-category">
-                    <h3><i class="fas fa-industry"></i> Specializations</h3>
-                    <ul>
-                        <li>Automotive Systems</li>
-                        <li>IoT Development</li>
-                        <li>HMI/GUI Design</li>
-                        <li>Real-time Applications</li>
+                <div class="skill-card">
+                    <div class="skill-card-icon"><i class="fas fa-car"></i></div>
+                    <h3>Focus Areas</h3>
+                    <ul class="skill-list">
+                        <li>Automotive Embedded Systems</li>
+                        <li>Real-time Firmware</li>
                         <li>Driver Development</li>
+                        <li>HMI / GUI Design</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Education & Certifications Section -->
-    <section id="education" class="education">
+    <!-- Projects Section -->
+    <section id="projects" class="section projects">
         <div class="container">
-            <h2 class="section-title">Education & Certifications</h2>
-            <div class="education-grid">
-                <div class="education-card">
-                    <div class="education-icon">
-                        <i class="fas fa-graduation-cap"></i>
+            <div class="section-header">
+                <span class="section-tag">Portfolio</span>
+                <h2 class="section-title">Featured Projects</h2>
+            </div>
+
+            <!-- Project 1 -->
+            <div class="project-card">
+                <div class="project-meta">
+                    <div class="project-icon-wrap">
+                        <i class="fas fa-tachometer-alt"></i>
                     </div>
-                    <h3>Bachelor's Degree</h3>
-                    <p class="education-detail">Computer Science / Electronics Engineering</p>
-                    <p class="education-meta">2022 - 2026 | Vietnam</p>
+                    <div class="project-intro">
+                        <h3>Digital Instrument Cluster & VCU</h3>
+                        <p class="project-subtitle">Automotive Dashboard System on Embedded Linux</p>
+                        <div class="project-tags">
+                            <span>Raspberry Pi 4</span>
+                            <span>STM32</span>
+                            <span>Qt/QML</span>
+                            <span>CAN Bus</span>
+                            <span>Yocto</span>
+                            <span>C++</span>
+                        </div>
+                        <a href="https://github.com/NguyenHongPhuc0412-2004/Digital-Instrument-Cluster-Vehicle-Control-Unit-VCU-" target="_blank" class="github-link">
+                            <i class="fab fa-github"></i> View on GitHub
+                        </a>
+                    </div>
                 </div>
 
-                <div class="education-card">
-                    <div class="education-icon">
-                        <i class="fas fa-certificate"></i>
+                <div class="project-body">
+                    <div class="project-description">
+                        <p>A complete automotive instrument cluster system built with Embedded Linux on Raspberry Pi 4,
+                        featuring a real-time Qt/QML HMI communicating with a STM32-based VCU over CAN Bus.
+                        Custom Yocto image was built with optimized boot time.</p>
+
+                        <h4><i class="fas fa-list-check"></i> What I did</h4>
+                        <ul>
+                            <li>Built custom Embedded Linux distribution using Yocto for Raspberry Pi 4 with Qt runtime, SocketCAN, and systemd integration</li>
+                            <li>Designed real-time HMI dashboard with Qt/QML — animated gauges, speed display, warning indicators</li>
+                            <li>Developed multi-threaded C++ backend for SocketCAN communication between VCU and cluster</li>
+                            <li>Programmed STM32F103 VCU firmware with JSON-based I/O pin mapping for flexible configuration</li>
+                            <li>Optimized Linux boot sequence reducing startup time significantly</li>
+                        </ul>
                     </div>
-                    <h3>TOEIC Certification</h3>
-                    <p class="education-detail">English Language Proficiency</p>
-                    <p class="education-meta">Score: 640 | Valid Until 2027</p>
+
+                    <div class="project-media">
+                        <!-- Gallery -->
+                        <div class="media-block">
+                            <h4><i class="fas fa-images"></i> Screenshots</h4>
+                            <div class="gallery">
+                                <img src="anh/Screenshot from 2025-12-11 22-21-11.png" alt="Cluster UI 1" class="gallery-thumb" data-full="anh/Screenshot from 2025-12-11 22-21-11.png">
+                                <img src="anh/Screenshot from 2025-12-11 22-21-18.png" alt="Cluster UI 2" class="gallery-thumb" data-full="anh/Screenshot from 2025-12-11 22-21-18.png">
+                                <img src="anh/Screenshot from 2025-12-11 22-21-23.png" alt="Cluster UI 3" class="gallery-thumb" data-full="anh/Screenshot from 2025-12-11 22-21-23.png">
+                                <img src="anh/Screenshot from 2025-12-11 22-21-34.png" alt="Cluster UI 4" class="gallery-thumb" data-full="anh/Screenshot from 2025-12-11 22-21-34.png">
+                                <img src="anh/Screenshot from 2025-12-11 22-21-39.png" alt="Cluster UI 5" class="gallery-thumb" data-full="anh/Screenshot from 2025-12-11 22-21-39.png">
+                                <img src="anh/Screenshot from 2025-12-11 22-21-50.png" alt="Cluster UI 6" class="gallery-thumb" data-full="anh/Screenshot from 2025-12-11 22-21-50.png">
+                            </div>
+                        </div>
+
+                        <!-- Video -->
+                        <div class="media-block">
+                            <h4><i class="fas fa-play-circle"></i> Demo Video</h4>
+                            <div class="video-wrap">
+                                <video controls preload="none" poster="">
+                                    <source src="video/Cluster_automotive.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-card">
+                <div class="project-meta">
+                    <div class="project-icon-wrap">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <div class="project-intro">
+                        <h3>Bare-metal Dino Game Controller</h3>
+                        <p class="project-subtitle">STM32 Firmware without HAL Library</p>
+                        <div class="project-tags">
+                            <span>STM32F407</span>
+                            <span>Bare-metal C</span>
+                            <span>UART</span>
+                            <span>EXTI ISR</span>
+                            <span>Timer/PWM</span>
+                            <span>Python</span>
+                        </div>
+                        <a href="https://github.com/NguyenHongPhuc0412-2004/Embedded-Driver-Dino-game-project-with-STM32F407-DISC-and-OLED" target="_blank" class="github-link">
+                            <i class="fab fa-github"></i> View on GitHub
+                        </a>
+                    </div>
                 </div>
 
-                <div class="education-card">
-                    <div class="education-icon">
-                        <i class="fas fa-microchip"></i>
+                <div class="project-body">
+                    <div class="project-description">
+                        <p>A bare-metal embedded project demonstrating deep understanding of microcontroller internals.
+                        The STM32F407 acts as a physical game controller for Chrome's Dino game, with all drivers
+                        written from scratch using direct register access — no HAL, no CMSIS drivers.</p>
+
+                        <h4><i class="fas fa-list-check"></i> What I did</h4>
+                        <ul>
+                            <li>Wrote GPIO, USART, and Timer drivers from scratch using direct register manipulation on STM32F407</li>
+                            <li>Implemented EXTI hardware interrupt handlers with software debouncing for reliable input detection</li>
+                            <li>Built bidirectional UART communication protocol to control a Python/Pygame Dino game on PC</li>
+                            <li>Configured Advanced Timers and PWM for dynamic LED visual feedback effects</li>
+                            <li>Achieved &lt;5ms input response latency with 150KB total firmware footprint</li>
+                        </ul>
                     </div>
-                    <h3>Embedded Systems</h3>
-                    <p class="education-detail">STM32 Microcontroller Training & Certifications</p>
-                    <p class="education-meta">Multiple Professional Courses</p>
+
+                    <div class="project-media">
+                        <div class="media-block">
+                            <h4><i class="fas fa-play-circle"></i> Demo Video</h4>
+                            <div class="video-wrap">
+                                <video controls preload="none">
+                                    <source src="video/emb_driver.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section education">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Background</span>
+                <h2 class="section-title">Education & Certifications</h2>
+            </div>
+
+            <div class="edu-grid">
+                <div class="edu-card">
+                    <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <div class="edu-content">
+                        <span class="edu-year">2022 – 2026</span>
+                        <h3>Bachelor's in Electronics Engineering</h3>
+                        <p>University in Ho Chi Minh City, Vietnam</p>
+                        <p class="edu-note">Focus: Embedded Systems, Microcontrollers, Digital Design</p>
+                    </div>
                 </div>
 
+                <div class="edu-card">
+                    <div class="edu-icon"><i class="fas fa-certificate"></i></div>
+                    <div class="edu-content">
+                        <span class="edu-year">Valid until 2027</span>
+                        <h3>TOEIC 640 – English Proficiency</h3>
+                        <p>IIG Vietnam Testing Center</p>
+                        <p class="edu-note">Professional working proficiency in English</p>
+                    </div>
+                </div>
+
+                <div class="edu-card">
+                    <div class="edu-icon"><i class="fas fa-microchip"></i></div>
+                    <div class="edu-content">
+                        <span class="edu-year">Self-study</span>
+                        <h3>Embedded Systems Training</h3>
+                        <p>STM32 Bare-metal, Embedded Linux, Qt/QML</p>
+                        <p class="edu-note">Online courses, documentation, hands-on projects</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact">
+    <section id="contact" class="section contact">
         <div class="container">
-            <h2 class="section-title">Get in Touch</h2>
-            <div class="contact-content">
+            <div class="section-header">
+                <span class="section-tag">Contact</span>
+                <h2 class="section-title">Let's Connect</h2>
+                <p class="section-desc">I'm actively looking for Fresher Embedded Software Engineer opportunities. Feel free to reach out!</p>
+            </div>
+
+            <div class="contact-grid">
                 <div class="contact-info">
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h3>Email</h3>
-                            <a href="mailto:phucnguyenhong412@gmail.com">phucnguyenhong412@gmail.com</a>
-                        </div>
-                    </div>
-
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h3>Phone</h3>
-                            <a href="tel:+84918023232">+84 918 023 232</a>
-                        </div>
-                    </div>
-
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h3>Location</h3>
-                            <p>Thủ Đức, Hồ Chí Minh, Vietnam</p>
+                    <h3>Get in Touch</h3>
+                    <div class="contact-links">
+                        <a href="mailto:phucnguyenhong412@gmail.com" class="contact-item-link">
+                            <div class="ci-icon"><i class="fas fa-envelope"></i></div>
+                            <div class="ci-text">
+                                <span class="ci-label">Email</span>
+                                <span>phucnguyenhong412@gmail.com</span>
+                            </div>
+                        </a>
+                        <a href="tel:+84918023232" class="contact-item-link">
+                            <div class="ci-icon"><i class="fas fa-phone"></i></div>
+                            <div class="ci-text">
+                                <span class="ci-label">Phone</span>
+                                <span>+84 918 023 232</span>
+                            </div>
+                        </a>
+                        <a href="https://github.com/NguyenHongPhuc0412-2004" target="_blank" class="contact-item-link">
+                            <div class="ci-icon"><i class="fab fa-github"></i></div>
+                            <div class="ci-text">
+                                <span class="ci-label">GitHub</span>
+                                <span>github.com/NguyenHongPhuc0412-2004</span>
+                            </div>
+                        </a>
+                        <div class="contact-item-link">
+                            <div class="ci-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div class="ci-text">
+                                <span class="ci-label">Location</span>
+                                <span>Thủ Đức, Hồ Chí Minh, Vietnam</span>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <form class="contact-form" id="contactForm">
-                    <div class="form-group">
-                        <input type="text" placeholder="Your Name" required>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" placeholder="John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" placeholder="john@example.com" required>
+                        </div>
                     </div>
                     <div class="form-group">
-                        <input type="email" placeholder="Your Email" required>
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" placeholder="Job Opportunity / Collaboration">
                     </div>
                     <div class="form-group">
-                        <textarea placeholder="Your Message" rows="5" required></textarea>
+                        <label for="message">Message</label>
+                        <textarea id="message" rows="5" placeholder="Tell me about the opportunity..." required></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
+                    <button type="submit" class="btn btn-primary btn-full">
+                        <i class="fas fa-paper-plane"></i>
+                        <span>Send Message</span>
+                    </button>
+                    <p class="form-note" id="formNote"></p>
                 </form>
             </div>
         </div>
@@ -435,30 +482,31 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2026 Nguyen Hong Phuc. All rights reserved.</p>
-            <p>Embedded Software Engineer | Automotive Systems Engineer</p>
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-bracket">&lt;</span>PH<span class="logo-bracket">/&gt;</span>
+                </div>
+                <p>Nguyen Hong Phuc &mdash; Fresher Embedded Software Engineer</p>
+                <div class="footer-socials">
+                    <a href="https://github.com/NguyenHongPhuc0412-2004" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/ph%C3%BAc-nguy%E1%BB%85n-a78b2838b" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:phucnguyenhong412@gmail.com"><i class="fas fa-envelope"></i></a>
+                </div>
+                <p class="footer-copy">&copy; 2026 Nguyen Hong Phuc. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 
-    <style>
-.intro-section { margin-bottom: 2rem; border-bottom: 2px solid rgba(14, 165, 233, 0.3); }
-.intro-title { font-size: 1.8rem; color: #0ea5e9; font-weight: 700; }
-.intro-subtitle { font-size: 1.35rem; color: #f59e0b; font-weight: 600; }
-.achievements-list { list-style: none; margin: 1.5rem 0; padding: 0; }
-.achievements-list li { padding: 1rem 0 1rem 2rem; position: relative; color: #fff; font-size: 1.1rem; }
-.achievements-list li::before { content: '✓'; position: absolute; left: 0; color: #06b6d4; font-weight: bold; }
-.project-impact { display: block; margin-top: 0.5rem; color: #f59e0b; font-weight: 600; }
-.about-text { flex: 1; }
-.education { background: #1a1428; padding: 6rem 2rem; }
-.education-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 3rem; }
-.education-card { background: linear-gradient(135deg, rgba(14, 165, 233, 0.1) 0%, rgba(245, 158, 11, 0.05) 100%); padding: 2rem; border-radius: 16px; text-align: center; border: 2px solid rgba(14, 165, 233, 0.2); transition: all 0.4s; cursor: pointer; }
-.education-card:hover { transform: translateY(-10px); border-color: #0ea5e9; box-shadow: 0 15px 40px rgba(14, 165, 233, 0.3); }
-.education-icon { font-size: 3rem; color: #0ea5e9; margin-bottom: 1rem; transition: all 0.3s; }
-.education-card:hover .education-icon { transform: scale(1.15); color: #f59e0b; }
-.education-card h3 { color: #fff; font-size: 1.5rem; font-weight: 700; }
-.education-detail { color: #0ea5e9; font-size: 1.1rem; font-weight: 600; }
-.education-meta { color: #e0e0e0; font-size: 0.95rem; opacity: 0.8; }
-    </style>
+    <!-- Back to Top -->
+    <button class="back-top" id="backTop" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightboxClose"><i class="fas fa-times"></i></button>
+        <img src="" alt="" id="lightboxImg">
+    </div>
 
     <script src="script.js"></script>
 </body>
