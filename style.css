@@ -645,6 +645,49 @@ button { cursor: pointer; font-family: inherit; }
     top: 2px;
 }
 
+/* ===== SKILL TAGS ===== */
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.skill-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.45rem 0.85rem;
+    background: var(--bg-2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--text-2);
+    transition: var(--transition);
+    cursor: default;
+}
+
+.skill-tag i {
+    font-size: 0.85rem;
+    transition: var(--transition);
+}
+
+/* Per-card accent colors for tags */
+.skill-card:nth-child(1) .skill-tag i { color: var(--cyan); }
+.skill-card:nth-child(1) .skill-tag:hover { border-color: var(--cyan); color: var(--text); background: rgba(0,212,255,0.1); transform: translateY(-2px); }
+
+.skill-card:nth-child(3) .skill-tag i { color: var(--purple); }
+.skill-card:nth-child(3) .skill-tag:hover { border-color: var(--purple); color: var(--text); background: rgba(180,138,251,0.1); transform: translateY(-2px); }
+
+.skill-card:nth-child(4) .skill-tag i { color: var(--green); }
+.skill-card:nth-child(4) .skill-tag:hover { border-color: var(--green); color: var(--text); background: rgba(74,222,128,0.1); transform: translateY(-2px); }
+
+.skill-card:nth-child(5) .skill-tag i { color: var(--orange); }
+.skill-card:nth-child(5) .skill-tag:hover { border-color: var(--orange); color: var(--text); background: rgba(251,146,60,0.1); transform: translateY(-2px); }
+
+.skill-card:nth-child(6) .skill-tag i { color: var(--pink); }
+.skill-card:nth-child(6) .skill-tag:hover { border-color: var(--pink); color: var(--text); background: rgba(244,114,182,0.1); transform: translateY(-2px); }
+
 .lang-grid {
     display: flex;
     gap: 1rem;
