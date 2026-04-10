@@ -35,6 +35,7 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-bg">
+            <canvas id="particleCanvas" class="particle-canvas"></canvas>
             <div class="hero-grid"></div>
         </div>
         <div class="hero-content">
@@ -125,6 +126,21 @@
                                 <strong>Location</strong>
                                 <span>Thủ Đức, Hồ Chí Minh, Vietnam</span>
                             </div>
+                        </div>
+                    </div>
+
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="5" data-suffix="+">0+</div>
+                            <div class="stat-label">Projects Built</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="10" data-suffix="+">0+</div>
+                            <div class="stat-label">Technologies</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="640" data-suffix="">0</div>
+                            <div class="stat-label">TOEIC Score</div>
                         </div>
                     </div>
 
@@ -372,34 +388,38 @@
                 <h2 class="section-title">Education & Certifications</h2>
             </div>
 
-            <div class="edu-grid">
-                <div class="edu-card">
-                    <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
-                    <div class="edu-content">
-                        <span class="edu-year">2022 – 2026</span>
+            <div class="timeline">
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"><i class="fas fa-graduation-cap"></i></div>
+                    <div class="timeline-content">
+                        <span class="timeline-year">2022 – 2026</span>
                         <h3>Bachelor's in Electronics Engineering</h3>
                         <p>University in Ho Chi Minh City, Vietnam</p>
-                        <p class="edu-note">Focus: Embedded Systems, Microcontrollers, Digital Design</p>
+                        <p class="timeline-note">Focus: Embedded Systems, Microcontrollers, Digital Design</p>
                     </div>
                 </div>
 
-                <div class="edu-card">
-                    <div class="edu-icon"><i class="fas fa-certificate"></i></div>
-                    <div class="edu-content">
-                        <span class="edu-year">Valid until 2027</span>
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot" style="border-color: var(--green); box-shadow: 0 0 12px rgba(63,185,80,0.4); color: var(--green);">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <span class="timeline-year" style="color: var(--green);">Valid until 2027</span>
                         <h3>TOEIC 640 – English Proficiency</h3>
                         <p>IIG Vietnam Testing Center</p>
-                        <p class="edu-note">Professional working proficiency in English</p>
+                        <p class="timeline-note">Professional working proficiency in English</p>
                     </div>
                 </div>
 
-                <div class="edu-card">
-                    <div class="edu-icon"><i class="fas fa-microchip"></i></div>
-                    <div class="edu-content">
-                        <span class="edu-year">Self-study</span>
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot" style="border-color: var(--purple); box-shadow: 0 0 12px rgba(163,113,247,0.4); color: var(--purple);">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <span class="timeline-year" style="color: var(--purple);">Self-study</span>
                         <h3>Embedded Systems Training</h3>
                         <p>STM32 Bare-metal, Embedded Linux, Qt/QML</p>
-                        <p class="edu-note">Online courses, documentation, hands-on projects</p>
+                        <p class="timeline-note">Online courses, documentation, hands-on projects</p>
                     </div>
                 </div>
             </div>

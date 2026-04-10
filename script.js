@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ===== SCROLL REVEAL =====
     const reveals = document.querySelectorAll(
-        '.skill-card, .project-card, .edu-card, .highlight-item, .cert-card, .contact-item-link'
+        '.skill-card, .project-card, .edu-card, .timeline-item, .highlight-item, .cert-card, .contact-item-link, .stat-item'
     );
 
     const revealObserver = new IntersectionObserver(entries => {
@@ -171,5 +171,131 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // ===== PARTICLE CANVAS =====
+    const canvas = document.getElementById('particleCanvas');
+    if (canvas) {
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+
+        function resizeCanvas() {
+            canvas.width = canvas.offsetWidth;
+            canvas.height = canvas.offsetHeight;
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        class Particle {
+            constructor() { this.reset(); }
+            reset() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.vx = (Math.random() - 0.5) * 0.5;
+                this.vy = (Math.random() - 0.5) * 0.5;
+                this.r = Math.random() * 1.5 + 0.5;
+                this.alpha = Math.random() * 0.5 + 0.15;
+                this.color = Math.random() > 0.7 ? '163,113,247' : '0,212,255';
+            }
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+                if (this.x < 0 || this.x > canvas.width)  this.vx *= -1;
+                if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+            }
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(${this.color},${this.alpha})`;
+                ctx.fill();
+            }
+        }
+
+        for (let i = 0; i < 90; i++) particles.push(new Particle());
+
+        function drawLines() {
+            for (let i = 0; i < particles.length; i++) {
+                for (let j = i + 1; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+                    if (dist < 130) {
+                        ctx.beginPath();
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.strokeStyle = `rgba(0,212,255,${0.12 * (1 - dist / 130)})`;
+                        ctx.lineWidth = 0.5;
+                        ctx.stroke();
+                    }
+                }
+            }
+        }
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => { p.update(); p.draw(); });
+            drawLines();
+            requestAnimationFrame(animateParticles);
+        }
+        animateParticles();
+    }
+
+    // ===== 3D TILT + GLARE =====
+    const tiltEls = document.querySelectorAll('.skill-card, .cert-card, .timeline-content, .stat-item');
+
+    tiltEls.forEach(card => {
+        const shine = document.createElement('div');
+        shine.className = 'tilt-shine';
+        card.appendChild(shine);
+
+        card.addEventListener('mouseenter', () => {
+            card.style.transition = 'box-shadow 0.3s, border-color 0.3s';
+        });
+
+        card.addEventListener('mousemove', e => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const cx = rect.width / 2;
+            const cy = rect.height / 2;
+            const rotX = ((y - cy) / cy) * -12;
+            const rotY = ((x - cx) / cx) * 12;
+
+            card.style.transform = `perspective(900px) rotateX(${rotX}deg) rotateY(${rotY}deg) translateZ(12px)`;
+
+            const sx = (x / rect.width) * 100;
+            const sy = (y / rect.height) * 100;
+            shine.style.background = `radial-gradient(circle at ${sx}% ${sy}%, rgba(255,255,255,0.1) 0%, transparent 65%)`;
+            shine.style.opacity = '1';
+        });
+
+        card.addEventListener('mouseleave', () => {
+            card.style.transition = 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s, border-color 0.3s';
+            card.style.transform = '';
+            shine.style.opacity = '0';
+        });
+    });
+
+    // ===== COUNTER ANIMATION =====
+    const statNumbers = document.querySelectorAll('.stat-number[data-target]');
+    const counterObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            const el = entry.target;
+            const target = parseInt(el.dataset.target);
+            const suffix = el.dataset.suffix || '';
+            let current = 0;
+            const step = target / 60;
+            const tick = setInterval(() => {
+                current += step;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(tick);
+                }
+                el.textContent = Math.floor(current) + suffix;
+            }, 25);
+            counterObserver.unobserve(el);
+        });
+    }, { threshold: 0.6 });
+    statNumbers.forEach(el => counterObserver.observe(el));
 
 });
